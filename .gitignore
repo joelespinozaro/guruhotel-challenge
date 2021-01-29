@@ -78,3 +78,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#eslint
+.eslintcache
