@@ -1,7 +1,27 @@
 @import './vars.scss';
+@import './queries.scss';
+@import './search.scss';
 
 body {
+  font-size: 16px;
   font-family: $theme-font;
-  background-color: $white-color;
-  color: $black-color;
+  background-color: $background-color;
+  color: $primary-color;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__header--title {  
+  font-size: 40px;
+  padding: 0px 0;
+}
+
+.main__search {
+  display: flex;
+  justify-content: center;
 }
