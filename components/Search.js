@@ -5,12 +5,29 @@ export default function Search() {
     <>
       <div className="search">
         <form className="search__form">
+          <label id="lbl-words" hidden>
+            Words
+          </label>
           <input
             className="search__form--input"
             type="text"
-            placeholder="What place to visit today?"
+            aria-labelledby="lbl-words"
+            placeholder="Search words"
           ></input>
-          <button className="search__form--button" type="submit">
+          <label id="lbl-location" hidden>
+            Location
+          </label>
+          <input
+            className="search__form--input"
+            type="text"
+            aria-labelledby="lbl-location"
+            placeholder="Search locations"
+          ></input>
+          <button
+            className="search__form--button"
+            aria-label="search"
+            type="submit"
+          >
             <SearchIcon stroke={'#fff'} width={26} height={26} />
           </button>
         </form>

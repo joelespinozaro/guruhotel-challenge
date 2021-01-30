@@ -6,27 +6,29 @@
 .search {
   @extend %equal-display;
   margin: 10px;
-  width: 400px;
+  width: 360px;
+  border-radius: $border-radius;
+  padding: 20px;
 }
-  
+
 .search__form {
-  @extend %equal-display;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr;
   width: 100%;
 }
 
 .search__form--input{
+  border-radius: $border-radius;
   font-size: 16px;
-  padding: 16px 18px;
-  border-top-left-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
+  padding: 14px 16px;
   border: none;
   color: $primary-color;
-  box-shadow: 0 10px 20px 10px rgba($primary-color,0.1);
-  width: 100%;
-}
-
-:focus {
+  box-shadow: none;
   outline: none;
+  &:focus {
+    box-shadow: 0 10px 20px 10px rgba($secondary-color,0.1), 0px 0px 1px 1px rgba($primary-color,0.2);
+  }
 }
 
 ::placeholder {
@@ -35,19 +37,22 @@
   font-family: $theme-font;
 }
 
-.search__form--button{  
+.search__form--button {  
   @extend %equal-display;
   align-items: center;
   border: none;
   background-color: $secondary-color;
   color:$white-color;
-  border-top-right-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-  padding: 16px 18px;
-  box-shadow: 0 10px 20px 10px rgba($primary-color,0.1);
+  border-radius: $border-radius;
+  padding: 14px 16px;
   opacity: 0.85;
+  outline: none;
+
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    box-shadow: 0 10px 20px 10px rgba($primary-color,0.1);
+  }
 }
 
-:hover,:focus, :active  {
-  opacity: 1;
-}
