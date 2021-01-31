@@ -2,13 +2,15 @@ This is a challenge project.
 
 ## Getting Started
 
-First, install dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Second, run the development server:
+2. Add a .env file equal to example .env.example
+
+3. Run the development server:
 
 ```bash
 npm run dev
