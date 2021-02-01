@@ -2,7 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width:1464px;
+  width: 100%;
+  margin:auto;
 }
 .main-header {
   font-size: 20px;
+}
+
+.main__content{
+    display: flex;
+    flex-wrap:wrap;
+}
+.main__header--title {
+  margin: 20px 24px 0px 24px;
+}
+.main__content--item {
+  flex-grow: 0;
+  flex-basis: 33.3%;
+  min-width: 0px;
 }
