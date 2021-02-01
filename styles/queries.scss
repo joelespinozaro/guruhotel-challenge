@@ -1,4 +1,45 @@
-@media (max-width: 600px) {
 
+@media (max-width: 1290px) {
+  .main__content--item {
+    flex-basis: 50%;
+  }
+  .business-wrap__body--title {
+    font-size: 18px;
+  }
+  .business-wrap__body--address {
+    font-size: 12px;
+  }
+}
 
+@media (max-width: 850px) {
+  .main__content--item {
+    flex-basis: 100%;
+  }
+  .business-wrap__body--title {
+    font-size: 16px;
+  }
+  .business-wrap__body--address {
+    font-size: 12px;
+  }
+  .search__form--input {
+    flex-basis: 100%;
+    margin: 12px 24px;
+  }
+  .search__form--button {
+    width: 100%;
+    margin: 12px 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .list-wrap-item {
+    border-top-left-radius:$border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .business-wrap__img-wrapper--img{
+    border-radius: 0px;
+    border-top-left-radius:$border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
 }

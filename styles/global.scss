@@ -1,12 +1,20 @@
 @import './vars.scss';
-@import './queries.scss';
 @import './search.scss';
+@import './business.scss';
+@import './main.scss';
+@import './queries.scss';
+@import './loadingNotFound.scss';
+
+@-ms-viewport{
+  width: device-width;
+}
 
 body {
   font-size: 16px;
   font-family: $theme-font;
   background-color: $background-color;
-  color: $primary-color;
+  color: $black-color;
+  margin:0;
 }
 
 .main {
