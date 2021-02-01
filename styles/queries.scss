@@ -31,15 +31,17 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .list-wrap-item {
+    flex-direction: column;
     border-top-left-radius:$border-radius;
     border-bottom-left-radius: $border-radius;
   }
 
   .business-wrap__img-wrapper--img{
-    border-radius: 0px;
-    border-top-left-radius:$border-radius;
-    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }

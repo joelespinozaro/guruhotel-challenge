@@ -1,5 +1,7 @@
 import Image from 'next/Image';
 import EyeIcon from './Icons/EyeIcon';
+import PhoneIcon from './Icons/PhoneIcon';
+import DirectionIcon from './Icons/DirectionIcon';
 import Rating from './Rating';
 
 export default function Business({ business }) {
@@ -18,6 +20,7 @@ export default function Business({ business }) {
         <Image
           width={140}
           height={140}
+          objectFit="cover"
           layout="intrinsic"
           className="business-wrap__img-wrapper--img"
           src={photos[0]}
@@ -34,19 +37,24 @@ export default function Business({ business }) {
           />
         )}
         <h2 className="business-wrap__body--title">{name}</h2>
-        <span className="business-wrap__body--phone">
-          {phone ? phone : 'No phone number registered'}
-        </span>
+        <div className="business-wrap__body--phone">
+          <div>
+            <PhoneIcon width={15} height={15} />
+          </div>
+          <span>{phone ? phone : 'phone not registered'}</span>
+        </div>
         <address className="business-wrap__body--address">
-          {location.address1}, {location.city}
+          <div>
+            <DirectionIcon width={15} height={15} />
+          </div>
+          <span> {location.formatted_address}</span>
         </address>
-        <section className="business-wrap__body--raiting">
-          <small>
+        <div className="business-wrap__body--raiting">
+          <div>
             <Rating ratingValue={rating} />
-          </small>
-
+          </div>
           <span>({review_count})</span>
-        </section>
+        </div>
       </div>
     </section>
   );
