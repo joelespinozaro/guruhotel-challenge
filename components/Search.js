@@ -1,4 +1,5 @@
 import SearchIcon from './Icons/SearchIcon';
+import Input from './Input';
 
 export default function Search({
   handleSubmit,
@@ -8,36 +9,16 @@ export default function Search({
   return (
     <div className="search">
       <form className="search__form" onSubmit={handleSubmit}>
-        <label id="lbl-term" hidden>
-          Term
-        </label>
-        <input
-          aria-labelledby="lbl-term"
-          className={`search__form--input ${
-            errorInput.term === true && 'error-input'
-          }`}
+        <Input
           name="term"
-          onChange={handleInput}
-          placeholder={`${
-            errorInput.term === true ? '⚠' : ''
-          } Write a term`}
-          type="text"
-        ></input>
-        <label id="lbl-location" hidden>
-          Location
-        </label>
-        <input
-          aria-labelledby="lbl-location"
-          className={`search__form--input ${
-            errorInput.location === true && 'error-input'
-          }`}
+          errorInput={errorInput}
+          handleInput={handleInput}
+        />
+        <Input
           name="location"
-          onChange={handleInput}
-          placeholder={`${
-            errorInput.location === true ? '⚠' : ''
-          } Write a location`}
-          type="text"
-        ></input>
+          errorInput={errorInput}
+          handleInput={handleInput}
+        />
         <button
           className="search__form--button"
           aria-label="search"
