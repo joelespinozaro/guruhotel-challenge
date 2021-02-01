@@ -1,14 +1,21 @@
+const requestOptions = {
+  method: 'GET',
+  headers: { 'Content-Type': 'application/json' },
+};
+
 async function getBusinessList(location, term) {
-  const requestOptions = {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  };
   const response = await fetch(
     `/api/business?location=${location}&term=${term}`,
     requestOptions
   );
   const businessList = await handleResponse(response);
   return businessList;
+}
+
+async function getBusinessDetails(id) {
+  const response = await fetch(`/api/business/${id}`, requestOptions);
+  const businessDetails = await handleResponse(response);
+  return businessDetails;
 }
 
 function handleResponse(response) {
@@ -25,4 +32,5 @@ function handleResponse(response) {
 
 export const businessServices = {
   getBusinessList,
+  getBusinessDetails,
 };

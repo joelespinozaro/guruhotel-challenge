@@ -53,6 +53,62 @@ export const getListOfBusiness = (location, term) => {
     };
   }
 };
+
+export const getBusinessDetails = (id) => {
+  return (dispatch) => {
+    dispatch(request());
+
+    businessServices.getBusinessDetails(id).then(
+      (businessDetails) => {
+        dispatch(success(businessDetails.business));
+        dispatch(addBusinessViewed(businessDetails.business.id));
+        dispatch(updateBusinessList());
+      },
+      (error) => {
+        dispatch(failure(error));
+      }
+    );
+  };
+
+  function request() {
+    return {
+      type: businessConstants.BUSINESS_DETAILS_REQUEST,
+    };
+  }
+  function success(businessDetails) {
+    return {
+      type: businessConstants.BUSINESS_DETAILS_SUCCESS,
+      payload: {
+        businessDetails: businessDetails,
+      },
+    };
+  }
+  function failure(error) {
+    return {
+      type: businessConstants.BUSINESS_DETAILS_FAILURE,
+      payload: {
+        error: error.toString(),
+      },
+    };
+  }
+};
+
+const addBusinessViewed = (id) => {
+  return {
+    type: businessConstants.ADD_BUSINESS_VIEWED,
+    payload: {
+      id: id,
+    },
+  };
+};
+
+const updateBusinessList = () => {
+  return {
+    type: businessConstants.UPDATE_BUSINESS_LIST,
+  };
+};
 export const BusinesssActions = {
   getListOfBusiness,
+  getBusinessDetails,
+  updateBusinessList,
 };
