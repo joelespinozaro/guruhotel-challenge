@@ -16,6 +16,7 @@ export const getListOfBusiness = (location, term) => {
           dispatch(failure('No found results. Please, try again.'));
         }
         dispatch(success(businessList.search.business));
+        dispatch(updateBusinessList());
       },
       (error) => {
         dispatch(failure(error));
