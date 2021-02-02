@@ -11,9 +11,12 @@ export default async (req, res) => {
 
   switch (method) {
     case 'GET':
-      data = await useApollo(businessDetails(businessId));
-
-      res.json(data);
+      try {
+        data = await useApollo(businessDetails(businessId));
+        res.json(data);
+      } catch (error) {
+        res.json(error);
+      }
       res.end();
       break;
 
