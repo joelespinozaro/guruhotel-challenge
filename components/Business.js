@@ -1,10 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import DirectionIcon from './Icons/DirectionIcon';
 import BusinessContent from './BusinessContent';
+import BusinessImage from './BusinessImage';
+import BusinessViewed from './BusinessViewed';
 import PhoneIcon from './Icons/PhoneIcon';
-import EyeIcon from './Icons/EyeIcon';
+
 import Rating from './Rating';
 
 export default function Business({ business }) {
@@ -21,25 +22,9 @@ export default function Business({ business }) {
   return (
     <Link href={`/business/${encodeURIComponent(id)}`}>
       <section className="list-wrap-item">
-        <div className="business-wrap__img-wrapper">
-          <Image
-            quality={50}
-            width={140}
-            height={140}
-            objectFit="cover"
-            layout="intrinsic"
-            className="business-wrap__img-wrapper--img"
-            src={photos[0]}
-            alt={name}
-          />
-        </div>
+        <BusinessImage photos={photos} name={name} />
         <div className="business-wrap__body">
-          {isViewed && (
-            <EyeIcon
-              className="business-wrap__body--viewed"
-              fill="#bbb"
-            />
-          )}
+          <BusinessViewed isViewed={isViewed} />
           <h2 className="business-wrap__body--title">{name}</h2>
           <BusinessContent
             className="business-wrap__body--phone"
