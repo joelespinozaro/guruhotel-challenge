@@ -10,7 +10,7 @@ export default function Search({
     <div className="search">
       <form className="search__form" onSubmit={handleSubmit}>
         <SearchInput
-          name="term"
+          name="find"
           placeholder="food, restaurant, delivery..."
           variant="Input-primary"
           onChange={handleInput}

@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Search from '../components/Search';
-import ListOfBusiness from '../components/ListOfBusiness';
-import { Loading } from '../components/Loading';
-import { NotFound } from '../components/NotFound';
-import { connect } from 'react-redux';
-import { BusinesssActions } from '../redux/actions';
+import { useState } from "react";
+import Search from "../components/Search";
+import ListOfBusiness from "../components/ListOfBusiness";
+import { Loading } from "../components/Loading";
+import { NotFound } from "../components/NotFound";
+import { connect } from "react-redux";
+import { BusinesssActions } from "../redux/actions";
 
 function Home({
   businessList,
@@ -14,7 +14,7 @@ function Home({
 }) {
   const [formValues, setFormValues] = useState({});
   const [errorInput, setErrorInput] = useState({
-    term: false,
+    find: false,
     location: false,
   });
   const handleInput = (e) => {
@@ -27,19 +27,19 @@ function Home({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formValues.term && !formValues.location) {
-      setErrorInput({ location: true, term: true });
+    if (!formValues.find && !formValues.location) {
+      setErrorInput({ location: true, find: true });
       return;
-    } else if (!formValues.term) {
-      setErrorInput({ ...errorInput, term: true });
+    } else if (!formValues.find) {
+      setErrorInput({ ...errorInput, find: true });
       return;
     } else if (!formValues.location) {
       setErrorInput({ ...errorInput, location: true });
       return;
     } else {
-      setErrorInput({ term: false, location: false });
+      setErrorInput({ find: false, location: false });
     }
-    getListOfBusiness(formValues.location, formValues.term);
+    getListOfBusiness(formValues.location, formValues.find);
   };
 
   return (
