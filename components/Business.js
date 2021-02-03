@@ -1,14 +1,14 @@
-import Link from 'next/link';
+import Link from "next/link";
+import PropTypes from "prop-types";
 
-import DirectionIcon from './Icons/DirectionIcon';
-import BusinessContent from './BusinessContent';
-import BusinessImage from './BusinessImage';
-import BusinessViewed from './BusinessViewed';
-import PhoneIcon from './Icons/PhoneIcon';
+import ContentGroup from "./ContentGroup";
+import BusinessContent from "./BusinessContent";
+import BusinessImage from "./BusinessImage";
+import BusinessViewed from "./BusinessViewed";
 
-import Rating from './Rating';
+import Rating from "./Rating";
 
-export default function Business({ business }) {
+function Business({ business }) {
   const {
     id,
     name,
@@ -26,18 +26,11 @@ export default function Business({ business }) {
         <div className="business-wrap__body">
           <BusinessViewed isViewed={isViewed} />
           <h2 className="business-wrap__body--title">{name}</h2>
-          <BusinessContent
-            className="business-wrap__body--phone"
-            icon={<PhoneIcon />}
-          >
-            {phone ? phone : 'phone not registered'}
-          </BusinessContent>
-          <BusinessContent
-            className="business-wrap__body--address"
-            icon={<DirectionIcon />}
-          >
-            {location.formatted_address}
-          </BusinessContent>
+          <ContentGroup
+            location={location}
+            phone={phone}
+            className="business-wrap__body--item"
+          />
           <BusinessContent
             className="business-wrap__body--raiting"
             icon={<Rating ratingValue={rating} />}
@@ -49,3 +42,9 @@ export default function Business({ business }) {
     </Link>
   );
 }
+
+Business.propTypes = {
+  business: PropTypes.object.isRequired,
+};
+
+export default Business;

@@ -1,16 +1,11 @@
-import Image from 'next/image';
+import Avatar from "./Avatar";
 
 const BusinessImage = ({ photos, name }) => (
   <div className="business-wrap__img-wrapper">
-    <Image
-      quality={50}
-      width={140}
-      height={140}
-      objectFit="cover"
-      layout="intrinsic"
+    <Avatar
       className="business-wrap__img-wrapper--img"
-      src={photos[0]}
-      alt={name}
+      photo={photos[0]}
+      name={name}
     />
   </div>
 );

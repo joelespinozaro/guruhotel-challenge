@@ -1,0 +1,12 @@
+.review__raiting {
+  display: flex;
+  align-items:center;
+  font-size: 14px;
+}
+
+.no-animation {
+  cursor: default;
+  &:hover {
+    transform: none;
+  }
+}
