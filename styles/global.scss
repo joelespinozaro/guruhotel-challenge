@@ -5,6 +5,11 @@
 @import './queries.scss';
 @import './loadingNotFound.scss';
 
+// components' styles
+@import '../components/Button/Button.scss';
+@import '../components/BaseInput/BaseInput.scss';
+@import '../components/SearchInput/SearchInput.scss';
+
 @-ms-viewport{
   width: device-width;
 }

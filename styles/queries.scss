@@ -21,13 +21,13 @@
   .business-wrap__body--address {
     font-size: 12px;
   }
-  .search__form--input {
+  .SearchInput {
     flex-basis: 100%;
-    margin: 12px 24px;
+    margin: 12px 24px !important;
   }
-  .search__form--button {
+  .btn-primary {
     width: 100%;
-    margin: 12px 24px;
+    margin: 12px 24px !important;
   }
 }
 

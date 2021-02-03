@@ -6,6 +6,7 @@
 .search__form {
   display:flex;
   justify-content: center;
+  align-items: flex-end;
   flex-wrap: wrap;
 }
 
@@ -31,31 +32,13 @@
   font-family: $theme-font;
 }
 
-.search__form--button {  
-
-  align-items: center;
-  border: none;
-  background-color: $secondary-color;
-  color:$white-color;
-  border-radius: $border-radius;
-  padding: 14px 16px;
-  opacity: 0.85;
-  outline: none;
-
-  &:hover {
-    opacity: 1;
-  }
-  &:active {
-    box-shadow: 0 10px 20px 10px rgba($primary-color,0.1);
-  }
-}
 
 .error-input {
-  border: 1px solid red;
+  border: 1px solid red !important;
   
   &::placeholder {
-    color: red;
-    font-size: 16px;
-    font-weight: 600;
+    color: red !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
   }
 }

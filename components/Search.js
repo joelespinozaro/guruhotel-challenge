@@ -1,5 +1,5 @@
-import SearchIcon from './Icons/SearchIcon';
-import Input from './Input';
+import Button from "./Button";
+import SearchInput from "./SearchInput";
 
 export default function Search({
   handleSubmit,
@@ -9,23 +9,28 @@ export default function Search({
   return (
     <div className="search">
       <form className="search__form" onSubmit={handleSubmit}>
-        <Input
+        <SearchInput
           name="term"
-          errorInput={errorInput}
-          handleInput={handleInput}
+          placeholder="food, restaurant, delivery..."
+          variant="Input-primary"
+          onChange={handleInput}
+          error={errorInput}
         />
-        <Input
+        <SearchInput
           name="location"
-          errorInput={errorInput}
-          handleInput={handleInput}
+          placeholder="address, city, state..."
+          variant="Input-primary"
+          onChange={handleInput}
+          error={errorInput}
         />
-        <button
-          className="search__form--button"
-          aria-label="search"
+        <Button
+          variant="btn-primary"
+          ariaLabel="search"
+          role="search"
           type="submit"
         >
-          <SearchIcon stroke={'#fff'} width={26} height={26} />
-        </button>
+          Search
+        </Button>
       </form>
     </div>
   );
